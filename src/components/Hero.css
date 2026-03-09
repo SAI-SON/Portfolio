@@ -1,0 +1,625 @@
+/* ===== Hero Section ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+/* ===== Animated Tagline ===== */
+.hero-tagline {
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    position: relative;
+    animation: slideInLeft 0.8s ease-out, glowPulse 2s ease-in-out infinite;
+}
+
+/* ===== Animated Title ===== */
+.hero-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #818cf8 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 4s ease infinite;
+}
+
+.hero-title .logo-dot {
+    -webkit-text-fill-color: var(--accent-primary);
+    animation: bounce 1s ease-in-out infinite;
+    display: inline-block;
+}
+
+/* ===== Typing Animation ===== */
+.typing-container {
+    margin-bottom: 1.5rem;
+    min-height: 2.5rem;
+}
+
+.typing-text {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-mono);
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    margin-left: 4px;
+    background: var(--accent-primary);
+    animation: blink 1s step-end infinite;
+    font-weight: 100;
+    color: var(--accent-primary);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ===== Animated Subtitle ===== */
+.hero-subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* ===== Tech Stack Pills ===== */
+.tech-stack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.tech-pill {
+    padding: 0.5rem 1.2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    color: var(--accent-secondary);
+    cursor: default;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tech-pill:hover {
+    background: rgba(79, 70, 229, 0.2);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+/* ===== CTA Buttons ===== */
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(1);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: var(--glass-bg);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
+}
+
+/* ===== Social Icons ===== */
+.hero-socials {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.hero-socials .nav-link {
+    animation: floatIcon 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.hero-socials .nav-link:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-socials .nav-link:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hero-socials .nav-link:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.hero-socials .nav-link:hover {
+    color: var(--accent-primary);
+    transform: translateY(-5px) scale(1.2);
+}
+
+/* ===== Background Glow with Animation ===== */
+.hero-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, rgba(124, 58, 237, 0.1) 30%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+    animation: pulseGlow 4s ease-in-out infinite, rotateGlow 20s linear infinite;
+}
+
+/* ===== Floating Particles ===== */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: floatParticle 15s linear infinite;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 12s;
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+    animation-duration: 14s;
+}
+
+.particle:nth-child(3) {
+    left: 30%;
+    animation-delay: 4s;
+    animation-duration: 10s;
+}
+
+.particle:nth-child(4) {
+    left: 40%;
+    animation-delay: 1s;
+    animation-duration: 16s;
+}
+
+.particle:nth-child(5) {
+    left: 50%;
+    animation-delay: 3s;
+    animation-duration: 13s;
+}
+
+.particle:nth-child(6) {
+    left: 60%;
+    animation-delay: 5s;
+    animation-duration: 11s;
+}
+
+.particle:nth-child(7) {
+    left: 70%;
+    animation-delay: 2.5s;
+    animation-duration: 15s;
+}
+
+.particle:nth-child(8) {
+    left: 80%;
+    animation-delay: 0.5s;
+    animation-duration: 12.5s;
+}
+
+.particle:nth-child(9) {
+    left: 90%;
+    animation-delay: 3.5s;
+    animation-duration: 14.5s;
+}
+
+/* ===== Floating Tech Icons ===== */
+.floating-tech-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.floating-icon {
+    position: absolute;
+    color: var(--accent-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.floating-icon:hover {
+    color: var(--accent-secondary);
+}
+
+.icon-label {
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-icon:hover .icon-label {
+    opacity: 1;
+}
+
+/* ===== Floating Code Blocks ===== */
+.floating-code-block {
+    position: absolute;
+    z-index: 3;
+    max-width: 280px;
+}
+
+.floating-code-block.left {
+    left: 3%;
+    top: 30%;
+}
+
+.floating-code-block.right {
+    right: 3%;
+    top: 35%;
+}
+
+.code-window {
+    background: rgba(20, 20, 25, 0.9);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: floatWindow 6s ease-in-out infinite;
+}
+
+.floating-code-block.right .code-window {
+    animation-delay: 3s;
+}
+
+@keyframes floatWindow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.code-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    background: rgba(30, 30, 35, 0.8);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27ca40;
+}
+
+.file-name {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.code-content {
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.code-line {
+    white-space: nowrap;
+}
+
+/* Terminal Specific Styles */
+.code-window.terminal .code-content {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.terminal-content {
+    color: var(--text-secondary);
+}
+
+.terminal-prompt {
+    color: var(--accent-secondary);
+    margin-right: 0.5rem;
+}
+
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+    color: var(--accent-secondary);
+}
+
+/* ===== Connection Lines ===== */
+.connection-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes gradientFlow {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(79, 70, 229, 0.6), 0 0 40px rgba(79, 70, 229, 0.3);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+@keyframes rotateGlow {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+    .floating-code-block {
+        display: none;
+    }
+
+    .floating-tech-icons {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .hero-bg-glow {
+        width: 400px;
+        height: 400px;
+    }
+
+    .floating-tech-icons {
+        display: none;
+    }
+
+    .tech-stack-pills {
+        gap: 0.5rem;
+    }
+
+    .tech-pill {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}

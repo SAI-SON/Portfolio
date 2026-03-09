@@ -1,0 +1,437 @@
+/* ===== Projects Section ===== */
+.projects-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== Background Code ===== */
+.projects-bg-code {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-code-line {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--accent-primary);
+    white-space: nowrap;
+}
+
+/* ===== Git Branch Visualization ===== */
+.git-branch-visual {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.branch-line {
+    height: 4px;
+    background: var(--glass-border);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.branch-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 2px;
+}
+
+.branch-commits {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -12px;
+    padding: 0 10%;
+}
+
+.commit-dot {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 50%;
+    border: 3px solid var(--bg-primary);
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+}
+
+.commit-dot::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border: 2px solid var(--accent-primary);
+    border-radius: 50%;
+    opacity: 0;
+    animation: commitRipple 2s ease-out infinite;
+}
+
+@keyframes commitRipple {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.commit-label {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.commit-dot:hover .commit-label {
+    opacity: 1;
+}
+
+/* ===== Projects Grid ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Project Card ===== */
+.project-card {
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Project Type Badge ===== */
+.project-type-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-type-badge.frontend {
+    background: rgba(97, 218, 251, 0.2);
+    color: #61dafb;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+.project-type-badge.backend {
+    background: rgba(104, 160, 99, 0.2);
+    color: #68a063;
+    border: 1px solid rgba(104, 160, 99, 0.3);
+}
+
+.project-type-badge.full-stack {
+    background: rgba(155, 89, 182, 0.2);
+    color: #9b59b6;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+/* ===== Status Indicator ===== */
+.status-indicator {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-indicator.completed .status-dot {
+    background: #27ca40;
+    box-shadow: 0 0 10px #27ca40;
+}
+
+.status-indicator.in-progress .status-dot {
+    background: #ffbd2e;
+    box-shadow: 0 0 10px #ffbd2e;
+}
+
+.status-text {
+    color: var(--text-secondary);
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* ===== Project Preview (Code Window Style) ===== */
+.project-image-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-preview {
+    background: rgba(20, 20, 25, 0.95);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    background: rgba(30, 30, 35, 0.8);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27ca40;
+}
+
+.preview-title {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.preview-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    max-height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.1));
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+}
+
+.project-image-container:hover .project-image {
+    transform: scale(1.05);
+}
+
+.preview-icon {
+    color: var(--accent-primary);
+    opacity: 0.8;
+}
+
+.preview-code-lines {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.code-line-preview {
+    height: 8px;
+    background: linear-gradient(90deg, var(--glass-border), transparent);
+    border-radius: 4px;
+}
+
+/* ===== Project Info ===== */
+.project-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Tech Tags with Animation ===== */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent-secondary);
+    background: rgba(6, 182, 212, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-secondary);
+    border-radius: 50%;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+    background: rgba(6, 182, 212, 0.2);
+}
+
+/* ===== Project Title ===== */
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-title {
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Project Description ===== */
+.project-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== Challenge Section ===== */
+.project-challenge {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--glass-border);
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    font-style: italic;
+}
+
+.project-challenge svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ===== Project Links ===== */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    color: white;
+    border-color: transparent;
+}
+
+.project-link.demo {
+    background: transparent;
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .git-branch-visual {
+        display: none;
+    }
+
+    .bg-code-line {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-type-badge {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+    }
+}

@@ -1,0 +1,5 @@
+/* App level styles can go here */
+.app {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
