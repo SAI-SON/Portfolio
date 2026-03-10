@@ -26,13 +26,15 @@ const projects = [
         demo: 'https://placement-assistant.saison02.tech/'
     },
     {
-        title: 'React Dashboard',
-        desc: 'Performant analytics interface with dynamic charts and glassmorphism design.',
-        tech: ['React', 'Chart.js', 'Vite'],
-        image: '/projects/react_dashboard.png',
-        challenge: 'Key: Optimized re-renders for multi-data streams.',
+        title: 'Hand Cricket',
+        desc: 'Interactive hand cricket game where you challenge the computer in this classic game of skill and luck.',
+        tech: ['React', 'JavaScript', 'CSS'],
+        image: '/projects/hand_cricket.png',
+        challenge: 'Key: Implemented smart AI difficulty levels and game logic.',
         type: 'Frontend',
-        status: 'Completed'
+        status: 'Completed',
+        github: 'https://github.com/SAI-SON/Hand-Cricket',
+        demo: 'https://sai-son.github.io/Hand-Cricket/'
     },
     {
         title: 'Aura Task App',
