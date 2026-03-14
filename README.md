@@ -1,16 +1,84 @@
-# React + Vite
+# Saison Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern personal portfolio built with React and Vite, featuring smooth animations, project highlights, skills, education, and contact details.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://saison02.tech/
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive single-page portfolio design
+- Animated hero section and smooth UI interactions
+- Dedicated sections for About, Skills, Projects, Education, and Contact
+- Project cards with GitHub and live demo links
+- Contact section with clickable email and phone links
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite 7
+- Framer Motion
+- Lucide React
+- React Intersection Observer
+- CSS3
+
+## Project Sections
+
+- Home / Hero
+- About
+- Skills
+- Projects
+- Education
+- Contact
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/SAI-SON/Potfolio.git
+```
+
+2. Go to project folder
+
+```bash
+cd Potfolio
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start development server
+
+```bash
+npm run dev
+```
+
+## Available Scripts
+
+- npm run dev: Start local development server
+- npm run build: Create production build
+- npm run preview: Preview production build locally
+- npm run lint: Run ESLint checks
+
+## Contact
+
+- Email: saisonavm1997@gmail.com
+- Phone: +91 9182736455
+- GitHub: https://github.com/SAI-SON
+- LinkedIn: https://www.linkedin.com/in/sai-son-5a0aa6294
+
+## License
+
+This project is open source and available under the MIT License.
