@@ -6,13 +6,15 @@ import './Projects.css';
 
 const projects = [
     {
-        title: 'Java Management System',
-        desc: 'Advanced Java application using JDBC and MySQL. Focused on OOP for data integrity.',
-        tech: ['Java', 'JDBC', 'MySQL'],
-        image: '/projects/java_backend.png',
-        challenge: 'Key: Implemented thread-safe data operations.',
-        type: 'Backend',
-        status: 'Completed'
+        title: 'Weather Prediction',
+        desc: 'Real-time weather forecasting app with location-based predictions, interactive charts, and 7-day forecast using live weather APIs.',
+        tech: ['React', 'OpenWeather API', 'JavaScript'],
+        image: '/projects/weather_prediction.svg',
+        challenge: 'Key: Integrated live weather API with dynamic UI updates.',
+        type: 'Frontend',
+        status: 'Completed',
+        github: 'https://github.com/SAI-SON/Weather-Forecast',
+        demo: 'https://weather-prediction.saison02.tech'
     },
     {
         title: 'Placement Assistant',

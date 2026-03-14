@@ -414,6 +414,10 @@
     color: var(--accent-secondary);
 }
 
+.project-link.demo:hover {
+    color: white;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .git-branch-visual {

@@ -250,7 +250,18 @@
     transition: color 0.3s ease;
 }
 
+.contact-info-link {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 .contact-info-item:hover span {
+    color: var(--text-primary);
+}
+
+.contact-info-item:hover .contact-info-link {
     color: var(--text-primary);
 }
 

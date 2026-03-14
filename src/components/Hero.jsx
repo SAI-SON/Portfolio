@@ -5,7 +5,7 @@ import './Hero.css';
 
 const Hero = () => {
     const [typedText, setTypedText] = useState('');
-    const fullText = 'Full Stack Developer';
+    const fullText = 'MERN Stack Developer';
 
     useEffect(() => {
         let index = 0;
@@ -72,7 +72,7 @@ const Hero = () => {
     const codeLines = [
         { text: 'const developer = {', color: '#c792ea' },
         { text: '  name: "Saison",', color: '#82aaff' },
-        { text: '  skills: ["React", "Java", "Node"],', color: '#c3e88d' },
+        { text: '  skills: ["JAVA","React", "MongoDB", "Express", "Node"],', color: '#c3e88d' },
         { text: '  passion: "Building solutions"', color: '#ffcb6b' },
         { text: '};', color: '#c792ea' },
     ];
@@ -253,14 +253,16 @@ const Hero = () => {
 
                 <div className="hero-socials">
                     {[
-                        { icon: Github, href: "#", label: "GitHub" },
-                        { icon: Linkedin, href: "#", label: "LinkedIn" },
-                        { icon: Mail, href: "#", label: "Email" }
+                        { icon: Github, href: 'https://github.com/SAI-SON', label: 'GitHub' },
+                        { icon: Linkedin, href: 'https://www.linkedin.com/in/sai-son-5a0aa6294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', label: 'LinkedIn' },
+                        { icon: Mail, href: 'mailto:saisonavm1997@gmail.com', label: 'Email' }
                     ].map((social, i) => (
                         <motion.a
                             key={social.label}
                             href={social.href}
                             className="nav-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             custom={i}
                             variants={socialVariants}
                             initial="hidden"

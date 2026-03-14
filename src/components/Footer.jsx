@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
     const socialLinks = [
-        { icon: Github, href: '#', label: 'GitHub' },
-        { icon: Linkedin, href: '#', label: 'LinkedIn' },
-        { icon: Twitter, href: '#', label: 'Twitter' }
+        { icon: Github, href: 'https://github.com/SAI-SON', label: 'GitHub' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/in/sai-son-5a0aa6294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', label: 'LinkedIn' },
+        { icon: Mail, href: 'mailto:saisonavm1997@gmail.com', label: 'Email' }
     ];
 
     const currentYear = new Date().getFullYear();
@@ -42,6 +42,8 @@ const Footer = () => {
                         <motion.a
                             key={social.label}
                             href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="footer-social-link"
                             aria-label={social.label}
                             initial={{ opacity: 0, scale: 0 }}

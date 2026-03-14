@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, Mail, MapPin } from 'lucide-react';
+import { Send, Mail, MapPin, Phone } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -34,7 +34,8 @@ const Contact = () => {
     };
 
     const contactInfo = [
-        { icon: Mail, text: 'saison@example.com', label: 'Email' },
+        { icon: Mail, text: 'saisonavm1997@gmail.com', label: 'Email', href: 'mailto:saisonavm1997@gmail.com' },
+        { icon: Phone, text: '+91 9182736455', label: 'Phone', href: 'tel:+919182736455' },
         { icon: MapPin, text: 'Erode, Tamil Nadu', label: 'Location' }
     ];
 
@@ -169,7 +170,11 @@ const Contact = () => {
                                 >
                                     <item.icon size={20} />
                                 </motion.div>
-                                <span>{item.text}</span>
+                                {item.href ? (
+                                    <a href={item.href} className="contact-info-link">{item.text}</a>
+                                ) : (
+                                    <span>{item.text}</span>
+                                )}
                             </motion.div>
                         ))}
                     </motion.div>
