@@ -44,13 +44,13 @@ https://saison02.tech/
 1. Clone the repository
 
 ```bash
-git clone https://github.com/SAI-SON/Potfolio.git
+git clone https://github.com/SAI-SON/Portfolio.git
 ```
 
 2. Go to project folder
 
 ```bash
-cd Potfolio
+cd Portfolio
 ```
 
 3. Install dependencies

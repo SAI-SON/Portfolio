@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Send, Mail, MapPin, Phone } from 'lucide-react';
@@ -9,6 +9,30 @@ const Contact = () => {
         triggerOnce: true,
         threshold: 0.1,
     });
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const recipient = 'saisonavm1997@gmail.com';
+        const subject = `Portfolio contact from ${formData.name || 'Website Visitor'}`;
+        const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoLink;
+    };
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -77,7 +101,7 @@ const Contact = () => {
                         whileHover={{ scale: 1.01 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                        <form className="contact-form" onSubmit={handleSubmit}>
                             <motion.div
                                 className="form-group"
                                 initial={{ opacity: 0, x: -30 }}
@@ -87,8 +111,11 @@ const Contact = () => {
                                 <label>Your Name</label>
                                 <motion.input
                                     type="text"
+                                    name="name"
                                     className="form-input"
                                     placeholder="Enter your name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
                                     whileFocus={{ scale: 1.02 }}
                                 />
                             </motion.div>
@@ -102,8 +129,11 @@ const Contact = () => {
                                 <label>Your Email</label>
                                 <motion.input
                                     type="email"
+                                    name="email"
                                     className="form-input"
                                     placeholder="Enter your email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
                                     whileFocus={{ scale: 1.02 }}
                                 />
                             </motion.div>
@@ -116,14 +146,18 @@ const Contact = () => {
                             >
                                 <label>Message</label>
                                 <motion.textarea
+                                    name="message"
                                     className="form-input"
                                     rows="5"
                                     placeholder="Let's build something together..."
+                                    value={formData.message}
+                                    onChange={handleInputChange}
                                     whileFocus={{ scale: 1.02 }}
                                 />
                             </motion.div>
 
                             <motion.button
+                                type="submit"
                                 className="btn btn-primary contact-btn"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}

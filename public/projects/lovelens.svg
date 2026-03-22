@@ -1,0 +1,73 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A0F0F"/>
+      <stop offset="1" stop-color="#2D1111"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(370 260) rotate(25) scale(370 220)">
+      <stop stop-color="#FF7A59" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FF7A59" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(920 470) rotate(-20) scale(380 240)">
+      <stop stop-color="#FF3D6E" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#FF3D6E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="370" y1="140" x2="910" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1515"/>
+      <stop offset="1" stop-color="#3A171A"/>
+    </linearGradient>
+    <linearGradient id="flameCore" x1="640" y1="290" x2="640" y2="530" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD65C"/>
+      <stop offset="0.52" stop-color="#FF8A3D"/>
+      <stop offset="1" stop-color="#FF4D35"/>
+    </linearGradient>
+    <linearGradient id="flameOuter" x1="640" y1="230" x2="640" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB15C"/>
+      <stop offset="1" stop-color="#FF3455"/>
+    </linearGradient>
+    <filter id="blur40" x="-120" y="-120" width="1520" height="960" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <ellipse cx="370" cy="260" rx="370" ry="220" fill="url(#glowA)"/>
+  <ellipse cx="920" cy="470" rx="380" ry="240" fill="url(#glowB)"/>
+
+  <g opacity="0.22" filter="url(#blur40)">
+    <circle cx="640" cy="360" r="140" fill="#FF7A59"/>
+  </g>
+
+  <rect x="310" y="108" width="660" height="504" rx="30" fill="url(#card)" stroke="#A84F4F" stroke-opacity="0.42"/>
+
+  <g opacity="0.88">
+    <circle cx="360" cy="160" r="7" fill="#FF6C66"/>
+    <circle cx="386" cy="160" r="7" fill="#FFC857"/>
+    <circle cx="412" cy="160" r="7" fill="#6CE7A6"/>
+  </g>
+
+  <text x="346" y="202" fill="#F3D7C9" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">LoveLens</text>
+  <text x="346" y="236" fill="#CDA99A" font-family="Segoe UI, Arial, sans-serif" font-size="20">FLAMES compatibility project</text>
+
+  <g>
+    <path d="M640 548C744 491 792 420 771 353C756 304 718 278 680 289C663 294 648 305 640 321C632 305 617 294 600 289C562 278 524 304 509 353C488 420 536 491 640 548Z" fill="url(#flameOuter)"/>
+    <path d="M640 523C715 480 752 424 736 374C725 340 697 320 668 328C654 332 644 342 640 353C636 342 626 332 612 328C583 320 555 340 544 374C528 424 565 480 640 523Z" fill="url(#flameCore)"/>
+    <path d="M640 488C686 461 709 426 700 396C694 375 677 362 660 367C651 369 644 376 640 384C636 376 629 369 620 367C603 362 586 375 580 396C571 426 594 461 640 488Z" fill="#FFE38A"/>
+  </g>
+
+  <g opacity="0.9">
+    <path d="M462 438C486 422 498 405 493 389C490 379 481 372 471 374C466 375 462 379 460 383C458 379 454 375 449 374C439 372 430 379 427 389C422 405 434 422 458 438L460 439L462 438Z" fill="#FF6D7A"/>
+    <path d="M824 438C848 422 860 405 855 389C852 379 843 372 833 374C828 375 824 379 822 383C820 379 816 375 811 374C801 372 792 379 789 389C784 405 796 422 820 438L822 439L824 438Z" fill="#FF6D7A"/>
+  </g>
+
+  <g opacity="0.88" fill="#EFD1C4" font-family="Consolas, monospace" font-size="18">
+    <text x="356" y="298">F : Friends</text>
+    <text x="356" y="330">L : Lovers</text>
+    <text x="356" y="362">A : Affection</text>
+    <text x="356" y="394">M : Marriage</text>
+    <text x="356" y="426">E : Enemies</text>
+    <text x="356" y="458">S : Siblings</text>
+  </g>
+
+  <text x="346" y="568" fill="#B88F83" font-family="Segoe UI, Arial, sans-serif" font-size="18">Match names. Spark a result.</text>
+</svg>

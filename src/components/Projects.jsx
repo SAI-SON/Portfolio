@@ -39,13 +39,26 @@ const projects = [
         demo: 'https://sai-son.github.io/Hand-Cricket/'
     },
     {
-        title: 'Aura Task App',
-        desc: 'Collaborative task tracker with a seamless React-Node.js integration.',
-        tech: ['React', 'Node.js', 'Context API'],
-        image: '/projects/task_app.png',
-        challenge: 'Key: Built optimistic UI for zero-latency.',
-        type: 'Full Stack',
-        status: 'In Progress'
+        title: 'LoveLens',
+        desc: 'FLAMES-based relationship compatibility app that matches two names and reveals a fun connection result with animated transitions.',
+        tech: ['React', 'JavaScript', 'FLAMES Logic'],
+        image: '/projects/lovelens.svg',
+        challenge: 'Key: Implemented deterministic FLAMES elimination logic with engaging result states.',
+        type: 'Frontend',
+        status: 'Completed',
+        github: 'https://github.com/SAI-SON/LoveLens.git',
+        demo: 'https://lovelens-flames.saison02.tech'
+    },
+    {
+        title: 'Github-dev-analyzer',
+        desc: 'Developer profile analytics dashboard that fetches GitHub data and visualizes repositories, language usage, and contribution insights.',
+        tech: ['React', 'GitHub API', 'Chart.js'],
+        image: '/projects/github_dev_analyzer.svg',
+        challenge: 'Key: Unified multi-endpoint GitHub API data into a clean, insight-focused UI.',
+        type: 'Frontend',
+        status: 'Completed',
+        github: 'https://github.com/SAI-SON/Github-Profile-Analyzer.git',
+        demo: 'https://github-dev-analyzer.saison02.tech'
     }
 ];
 
