@@ -6,6 +6,17 @@ import './Projects.css';
 
 const projects = [
     {
+        title: 'Smart Agri Assistant',
+        desc: 'AI-powered agriculture assistant offering real-time insights and smart recommendations for farming.',
+        tech: ['React', 'AI', 'JavaScript'],
+        image: '/projects/smart_agri_assistant.png',
+        challenge: 'Key: Implemented an intelligent assistant tailored for agricultural needs.',
+        type: 'Full Stack',
+        status: 'Completed',
+        github: 'https://github.com/SAI-SON/Smart-Agri-Assistant.git',
+        demo: 'https://smart-agri-assistant.saison02.tech'
+    },
+    {
         title: 'Weather Prediction',
         desc: 'Real-time weather forecasting app with location-based predictions, interactive charts, and 7-day forecast using live weather APIs.',
         tech: ['React', 'OpenWeather API', 'JavaScript'],
@@ -193,9 +204,6 @@ const Projects = () => {
                             {/* Code Window Style Preview with Image */}
                             <div className="project-preview">
                                 <div className="preview-header">
-                                    <span className="dot red"></span>
-                                    <span className="dot yellow"></span>
-                                    <span className="dot green"></span>
                                     <span className="preview-title">{project.title}</span>
                                 </div>
                                 <div className="preview-content">

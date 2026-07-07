@@ -126,7 +126,7 @@
 .project-type-badge {
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    left: 1rem;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -161,7 +161,7 @@
 /* ===== Status Indicator ===== */
 .status-indicator {
     position: absolute;
-    top: 1rem;
+    top: 3.5rem;
     left: 1rem;
     z-index: 10;
     display: flex;
