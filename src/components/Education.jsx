@@ -18,7 +18,7 @@ const educationData = [
     year: "2023 – Present",
     degree: "Bachelor of Technology (B.Tech) in Information Technology",
     institution: "Nandha Engineering College",
-    status: "3rd Year",
+    status: "4th Year",
     description:
       "Currently pursuing a B.Tech in Information Technology, focusing on data structures, algorithms, software development, and modern computing technologies.",
     icon: GraduationCap,
